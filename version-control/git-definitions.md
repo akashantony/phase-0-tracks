@@ -10,5 +10,6 @@ a branch is a line of code that one can work on and this isn't going to effect t
 
 * What is a commit? What makes a good commit message?
 A commit is when a team member is ready with his recommendation of a code he is add it and commit to it on the git. A good commit message is one which gives anyone who looks at the message clarity on what commit was made by the party.
+
 * What is a merge conflict?
-when a change is made and it is on the same code then there is a slight conflict of code. When two different coders make two different changes to a particular code there is a conflict.
+when a change is made and it is on the same code then there is a slight conflict of code. When two different coders make two different changes to a particular code there is a conflict!!!!
