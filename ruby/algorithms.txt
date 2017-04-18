@@ -1,0 +1,8 @@
+1.Make note of total number of floors the elevator has access to.
+2.Give each floor a number or name.
+3.An option to go to each floor should be displayed in the elevator.
+4.When the user selects the name take the elevator to the designated floor.
+
+
+Path Finder.
+An algorithm that i use on a daily basis is the find the shortest path to the bank. If i am traveling via car i use the route that is fastest via road but if im walking I can walk through the side of a few block via parking paths and not tale s much time. 
