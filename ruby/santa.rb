@@ -29,21 +29,23 @@ class Santa
     end
     
     def get_mad_at(raindeer_name)
-      @reindeer_ranking << raindeer_name
-     p @reindeer_ranking.uniq
+      @reindeer_ranking.delete_if {|x| x == raindeer_name}
+      @reindeer_ranking.push(raindeer_name)
+    end
+
+  
+    
+    def gender=(type)
+      p type
     end
     
-    # def gender=(type)
-    #   p type
-    # end
+    def age
+      @age
+    end
     
-    # def age
-    #   @age
-    # end
-    
-    # def ethnicity
-    #   @ethnicity
-    # end
+    def ethnicity
+      @ethnicity
+    end
 
 end
 
@@ -57,8 +59,9 @@ magic.get_mad_at("Vixen")
 magic.gender = "female"
 magic.age
 magic.ethnicity
+p magic
 
-# santa_array = []
+
 
 # santas << magic = Santa.new("Male","Asian")
 # santas << Santa.new("agender", "black")
