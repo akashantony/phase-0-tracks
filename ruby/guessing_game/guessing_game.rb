@@ -1,16 +1,16 @@
 
 class Guessing_game
   
-  def initialize (secretword)
-    @secretword = secretword
-    @no_guesses = secretword.length * 2
-    @wrong_letter = []
-    @secretword_space = Array.new(@secretword.length,'_')
-
+  def initialize(secret_word)
+    @secret_word = secret_word
+    @remaining_num_of_guesses = secret_word.length * 2
+    @wrong_letters = []
+    @secret_word_space = Array.new(@secret_word.length,'_')
+    @word = [] 
   end
 
   def word_detail 
-  @word = [] << @secretword.chars  
+    @word << @secret_word.chars  
   end
 
   def user_guess=(a)
@@ -18,32 +18,32 @@ class Guessing_game
   end
   
   def main_function
-    loop until @secretword_space.include ? '_'  || @no_guesses <= 0
-    #@secretword_space == @word
+    loop until @secret_word_space.include? '_'  || @remaining_num_of_guesses <= 0
+    #@secret_word_space == @word
       if @user_guess = @word.each 
-            p @user_guess
-            @no_guesses-=
+          p @user_guess
+          p @remaining_num_of_guesses -= 1
       elsif 
           @user_guess != @word.each
-          @wrong_letter << user_guess
-          @no_guesses -= 1
-        elsif
-          @user_guess.include ? @wrong_letter.each
-          p @wrong_letter
-        else
-          puts "you have #{@no_guesses} remaining"
-        end
+          @wrong_letters << user_guess
+          @remaining_num_of_guesses -= 1
+      elsif
+          @user_guess.include? @wrong_letters.each
+          p @wrong_letters
+      else
+          puts "you have #{@remaining_num_of_guesses} remaining"
+       end
       end
     end
  
  def congrats
-    if @secretword_space == @word
+    if @secret_word_space == @word
       puts "congrats"
     end
  end
  
  def taunt
-    if @no_guesses <= 0
+    if @remaining_num_of_guesses <= 0
       puts " you failed! "
     end
  end
@@ -86,7 +86,7 @@ anything.user_guess()
 #IE, IF THE USER GUESSES == THE USER_ONE (SECRET WORD)
 
 #IF USER_TWO LOSES THEN A YOU FAILED MESSAGE SHALL BE PRINTED 
-#IE, IF THE GUESSES REAMINING WHICH IS == THE SECRETWORD.LENGHTH * 2 IS 
+#IE, IF THE GUESSES REAMINING WHICH IS == THE SECRET_WORD.LENGHTH * 2 IS 
 # < THE NUMBER OF TOTAL GUESSES MADE.
 
 
