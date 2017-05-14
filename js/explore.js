@@ -1,19 +1,22 @@
 // Challenge 7.1 
 // Akash 
 
-// Pseudocode a program that takes a word and prints the reverse of that word as a result. 
-//make a function that takes a string as an argument.
-//take the string and make it into an array of the string letters.
-//take the array and use the reverse function that will print a reversed array.
-//use the join the arrays back to being a word.
-// print the result.
 
-function Wordreverse(string,seperator){
-var array =[(string.split(seperator))];
-var finalWord = array.reverse();
-} 
+// The split() method splits a String object into an array of string by separating the string into sub strings.
+// The reverse() method reverses an array in place. ...
+// The join() method joins all elements of an array into a string.
 
 
-Wordreverse("akash",'');
 
-console.log(finalWord);
+function wordReverse(word) {
+    
+    var splitWord = word.split(""); 
+    
+    var reverseArray = splitWord.reverse(); 
+    
+    var joinArray = reverseArray.join(""); 
+    
+    return joinArray; 
+}
+ 
+ wordReverse("akash");
