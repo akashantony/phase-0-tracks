@@ -1,0 +1,96 @@
+sqlite> CREATE TABLE student (
+   ...> id INTEGER PRIMARY KEY,
+   ...> name VARCHAR(255),
+   ...> year INT,
+   ...> placed BOOLEAN
+   ...> );
+sqlite> INSERT INTO student (name,year,placed) VALUES ("Akash",2017,"true");
+sqlite> INSERT INTO student (name,year,placed) VALUES ("Ravi",2016,"true");
+sqlite> INSERT INTO student (name,year,placed) VALUES ("Josh",2015,"true");
+sqlite> CREATE TABLE student (
+   ...> id INTEGER PRIMARY KEY,
+   ...> name VARCHAR(255),
+   ...> year INT,
+   ...> placed BOOLEAN,
+   ...> cohortname VARCHAR(255)
+   ...> );
+Error: table student already exists
+sqlite> ALTER TABLE student ADD COLUMN (cohortname VARCHAR(255));
+Error: near "(": syntax error
+sqlite> ALTER TABLE student ADD COLUMN cohortname VARCHAR(255);
+sqlite> SELECT * FROM student;
+1|Akash|2017|true|
+2|Ravi|2016|true|
+3|Josh|2015|true|
+sqlite> INSERT INTO student (cohortname) VALUES ("rockdoves");
+sqlite> SELECT * FROM student;
+1|Akash|2017|true|
+2|Ravi|2016|true|
+3|Josh|2015|true|
+4||||rockdoves
+
+sqlite> DELETE student;
+
+
+sqlite> DROP TABLE student;
+
+
+sqlite> CREATE TABLE student (
+   ...> id INTEGER PRIMARY KEY,
+   ...> name VARCHAR(255),
+   ...> year INT,
+   ...> placed BOOLEAN,
+   ...> cohortname VARCHAR(255)
+   ...> );
+
+
+
+sqlite> INSERT INTO student (name,year,placed,cohortname) VALUES ("Josh",2015,"true""rock doves");
+Error: 3 values for 4 columns
+sqlite> INSERT INTO student (name,year,placed,cohortname) VALUES ("Josh",2015,"true","rock doves");
+sqlite> INSERT INTO student (name,year,placed,cohortname) VALUES ("Akash",2016,"true","skippers");
+sqlite> INSERT INTO student (name,year,placed,cohortname) VALUES ("Ravi",2017,"true","kings");
+sqlite> SELECT * FROM student;
+1|Josh|2015|true|rock doves
+2|Akash|2016|true|skippers
+3|Ravi|2017|true|kings
+
+
+sqlite> CREATE TABLE cohort (
+   ...> id INTEGER PRIMARY KEY,
+   ...> cohortname VARCHAR(255));
+sqlite> DROP TABLE student;
+
+
+sqlite> CREATE TABLE student (
+   ...> id INTEGER PRIMARY KEY,
+   ...> name VARCHAR(255),
+   ...> year INT,
+   ...> placed BOOLEAN,
+   ...> cohortname VARCHAR(255),
+   ...> FOREIGN KEY (cohortname) REFERENCES cohort(id)
+   ...> );
+
+
+
+
+   Display the information in one table (either table is fine).
+
+   SELECT * FROM student;
+
+Update an item that meets some condition (you can choose a condition that makes sense).
+
+UPDATE student SET year= 2017 WHERE name="Akash";
+
+Display the information in both tables using one query.
+
+SELECT * FROM cohort, student ;
+
+Display a narrower selection of columns (fewer columns than all of them, in other words) from both tables using one query.
+
+SELECT student.name, student.year, cohort.cohortname FROM student, cohort;
+
+Delete an item that meets some condition (you can choose a condition that makes sense).
+
+DELETE FROM student
+WHERE year = 2017;
