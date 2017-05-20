@@ -1,0 +1,25 @@
+QUERIES
+1. Create queries.txt
+2. Joining 3 tables:
+sqlite> SELECT * FROM reviews
+   ...> JOIN users ON reviews.user_id = users.id
+   ...> JOIN businesses ON reviews.business_id = businesses.id;
+1|1|Fake equipment! SAD!|3|3|3|Donald|Trump|3|LA Fitness
+2|5|Great environment!|1|2|2|Akash|Antony|1|Devbootcamp
+3|1|Intense trainers! SAD!|4|1|1|Nico|Glennon|4|Corepower
+4|3|Minimum wage meets the standard|2|4|4|Hillary|Clinton|2|Burger King
+3. Get rid of repetitive columns:
+sqlite> SELECT users.firstname, users.lastname, businesses.name, reviews.stars, reviews.comment FROM reviews
+   ...> JOIN users ON reviews.user_id = users.id
+   ...> JOIN businesses ON reviews.business_id = businesses.id;
+Donald|Trump|LA Fitness|1|Fake equipment! SAD!
+Akash|Antony|Devbootcamp|5|Great environment!
+Nico|Glennon|Corepower|1|Intense trainers! SAD!
+Hillary|Clinton|Burger King|3|Minimum wage meets the standard
+4. Viewing data from all 3 tables for one particular business:
+sqlite> SELECT users.firstname, users.lastname, businesses.name, reviews.stars, reviews.comment 
+   ...> FROM reviews
+   ...> JOIN users ON reviews.user_id = users.id
+   ...> JOIN businesses ON reviews.business_id = businesses.id
+   ...> WHERE businesses.name = "LA Fitness";
+Donald|Trump|LA Fitness|1|Fake equipment! SAD!
