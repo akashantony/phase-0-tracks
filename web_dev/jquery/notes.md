@@ -7,4 +7,5 @@ Every time a fundamental principle or important aspect or new concept is learned
 
 Breaks are important so that the mind and body can stay fresh and absorb as much as information as possible. 
 
-I plan to approach the topic confidently as i have a feeling that jquery is to java script as inbuilt methods are to ruby.
+I plan to approach the topic confidently as i have a feeling that jquery is to java script as inbuilt methods are to ruby. 
+ The way in which the  
